@@ -22,6 +22,7 @@ typedef void(^CompleteBlock)(void);
 - (UIImage *)placeHolderImageOfZeroBannerView;
 - (UIImage *)placeHolderImageOfBannerView:(KDCycleBannerView *)bannerView atIndex:(NSUInteger)index;
 
+
 @end
 
 @protocol KDCycleBannerViewDelegate <NSObject>
@@ -29,7 +30,8 @@ typedef void(^CompleteBlock)(void);
 @optional
 - (void)cycleBannerView:(KDCycleBannerView *)bannerView didScrollToIndex:(NSUInteger)index;
 - (void)cycleBannerView:(KDCycleBannerView *)bannerView didSelectedAtIndex:(NSUInteger)index;
-
+- (UIColor *)cycleBannerViewPageIndicatorTintColor;
+- (UIColor *)cycleBannerViewCurrentPageIndicatorTintColor;
 @end
 
 @interface KDCycleBannerView : UIView

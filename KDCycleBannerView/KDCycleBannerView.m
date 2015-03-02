@@ -94,6 +94,12 @@ static void *kContentImageViewObservationContext = &kContentImageViewObservation
     _pageControl = [[UIPageControl alloc] initWithFrame:pageControlFrame];
     _pageControl.center = CGPointMake(CGRectGetWidth(self.frame)*0.5, CGRectGetHeight(self.frame) - 12.);
     _pageControl.userInteractionEnabled = NO;
+    if ([self.delegate respondsToSelector:@selector(cycleBannerViewPageIndicatorTintColor)]) {
+        _pageControl.pageIndicatorTintColor = [self.delegate cycleBannerViewPageIndicatorTintColor];
+    }
+    if ([self.delegate respondsToSelector:@selector(cycleBannerViewCurrentPageIndicatorTintColor)]) {
+        _pageControl.currentPageIndicatorTintColor = [self.delegate cycleBannerViewCurrentPageIndicatorTintColor];
+    }
     [self addSubview:_pageControl];
 }
 

@@ -19,7 +19,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r3e-lX-LsK" customClass="KDCycleBannerView">
                                 <rect key="frame" x="20" y="100" width="280" height="150"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="datasource" destination="vXZ-lx-hvc" id="fAN-7v-1AC"/>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="YQf-Ru-Qdw"/>

@@ -72,6 +72,14 @@
     NSLog(@"didSelectedAtIndex:%ld", (long)index);
 }
 
+- (UIColor *)cycleBannerViewPageIndicatorTintColor{
+    return [UIColor blackColor];
+}
+
+- (UIColor *)cycleBannerViewCurrentPageIndicatorTintColor{
+    return [UIColor grayColor];
+}
+
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
