@@ -3,8 +3,6 @@ KDCycleBannerView
 
 A Cycle Or Loop ScrollView For Banner
 
-![ScreenShoot](https://github.com/kingiol/KDCycleBannerView/raw/master/ScreenShoot.gif)
-
 ## Installation with CocoaPods
 
 [CocoaPods](http://cocoapods.org/) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries.
