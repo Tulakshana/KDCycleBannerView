@@ -13,7 +13,7 @@ A Cycle Or Loop ScrollView For Banner
 
 ``` ruby
 platform :ios
-pod "KDCycleBannerView"
+pod 'KDCycleBannerView', :git => 'https://github.com/Tulakshana/KDCycleBannerView.git'
 ```
 
 ## Usage
