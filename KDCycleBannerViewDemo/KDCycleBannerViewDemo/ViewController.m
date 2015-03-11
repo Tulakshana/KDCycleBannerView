@@ -34,6 +34,7 @@
     _cycleBannerViewBottom.delegate = self;
     _cycleBannerViewBottom.continuous = YES;
     _cycleBannerViewBottom.autoPlayTimeInterval = 5;
+    _cycleBannerViewBottom.pageIndicatorHidden = TRUE;
     [self.view addSubview:_cycleBannerViewBottom];
 }
 

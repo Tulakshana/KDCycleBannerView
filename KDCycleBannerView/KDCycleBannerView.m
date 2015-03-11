@@ -100,6 +100,7 @@ static void *kContentImageViewObservationContext = &kContentImageViewObservation
     if ([self.delegate respondsToSelector:@selector(cycleBannerViewCurrentPageIndicatorTintColor)]) {
         _pageControl.currentPageIndicatorTintColor = [self.delegate cycleBannerViewCurrentPageIndicatorTintColor];
     }
+    _pageControl.hidden = self.pageIndicatorHidden;
     [self addSubview:_pageControl];
 }
 
