@@ -29,6 +29,17 @@ _cycleBannerViewBottom.autoPlayTimeInterval = 5;
 [self.view addSubview:_cycleBannerViewBottom];
 ```
 
+Additional features added in this fork
+
+``` objc
+//delegate methods
+- (UIColor *)cycleBannerViewPageIndicatorTintColor;
+- (UIColor *)cycleBannerViewCurrentPageIndicatorTintColor;
+
+//properties
+@property (assign, nonatomic) BOOL pageIndicatorHidden;
+```
+
 For more infomation, please check the demo project, Good Luck!
 
 
