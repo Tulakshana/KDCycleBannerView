@@ -44,6 +44,7 @@ typedef void(^CompleteBlock)(void);
 @property (assign, nonatomic) NSUInteger autoPlayTimeInterval;  // if autoPlayTimeInterval more than 0, the bannerView will autoplay with autoPlayTimeInterval value space, default is 0
 
 @property (assign, nonatomic) BOOL pageIndicatorHidden;
+@property (assign, nonatomic) int pageIndicatorYPosition;
 
 - (void)reloadDataWithCompleteBlock:(CompleteBlock)competeBlock;
 - (void)setCurrentPage:(NSInteger)currentPage animated:(BOOL)animated;

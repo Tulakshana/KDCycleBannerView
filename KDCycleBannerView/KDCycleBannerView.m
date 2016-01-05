@@ -79,7 +79,7 @@ static void *kContentImageViewObservationContext = &kContentImageViewObservation
 }
 
 - (void)initializeScrollView {
-    if (self.pageIndicatorHidden) {
+    if (self.pageIndicatorHidden || (self.pageIndicatorYPosition > 0)) {
         _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))];
     }else {
         _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame)-30)];
@@ -95,8 +95,15 @@ static void *kContentImageViewObservationContext = &kContentImageViewObservation
 
 - (void)initializePageControl {
     CGRect pageControlFrame = CGRectMake(0, 0, CGRectGetWidth(_scrollView.frame), 30);
+
+    
     _pageControl = [[UIPageControl alloc] initWithFrame:pageControlFrame];
-    _pageControl.center = CGPointMake(CGRectGetWidth(self.frame)*0.5, CGRectGetHeight(self.frame) - 12.);
+    if (self.pageIndicatorYPosition > 0) {
+        _pageControl.center = CGPointMake(CGRectGetWidth(self.frame)*0.5, self.pageIndicatorYPosition);
+    }else {
+        _pageControl.center = CGPointMake(CGRectGetWidth(self.frame)*0.5, CGRectGetHeight(self.frame) - 12.);
+    }
+    
     _pageControl.userInteractionEnabled = NO;
     if ([self.delegate respondsToSelector:@selector(cycleBannerViewPageIndicatorTintColor)]) {
         _pageControl.pageIndicatorTintColor = [self.delegate cycleBannerViewPageIndicatorTintColor];
@@ -143,6 +150,7 @@ static void *kContentImageViewObservationContext = &kContentImageViewObservation
         CGRect imgRect = CGRectMake(contentWidth * i, 0, contentWidth, contentHeight);
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:imgRect];
         imageView.backgroundColor = [UIColor clearColor];
+        imageView.clipsToBounds = TRUE;
         imageView.contentMode = [_datasource contentModeForImageIndex:i];
         
         id imageSource = [_datasourceImages objectAtIndex:i];
